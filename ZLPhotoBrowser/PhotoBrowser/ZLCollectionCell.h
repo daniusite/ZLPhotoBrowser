@@ -18,7 +18,7 @@
 @property (nonatomic, strong) UIImageView *videoImageView;
 @property (nonatomic, strong) UIImageView *liveImageView;
 @property (nonatomic, strong) UILabel *timeLabel;
-@property (nonatomic, strong) UIView *maskView;
+@property (nonatomic, strong) UIView *maskUIView;
 @property (nonatomic, strong) UILabel *indexLabel;
 
 @property (nonatomic, assign) BOOL allSelectGif;

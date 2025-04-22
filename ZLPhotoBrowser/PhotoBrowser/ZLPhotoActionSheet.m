@@ -848,22 +848,22 @@ double const ScalePhotoWidth = 1000;
 }
 
 - (void)setCellMaskView:(ZLCollectionCell *)cell isSelected:(BOOL)isSelected model:(ZLPhotoModel *)model {
-    cell.maskView.hidden = YES;
+    cell.maskUIView.hidden = YES;
     cell.enableSelect = YES;
     if (isSelected) {
-        cell.maskView.backgroundColor = self.configuration.selectedMaskColor;
-        cell.maskView.hidden = !self.configuration.showSelectedMask;
+        cell.maskUIView.backgroundColor = self.configuration.selectedMaskColor;
+        cell.maskUIView.hidden = !self.configuration.showSelectedMask;
     } else {
         NSInteger selCount = self.arrSelectedModels.count;
         if (selCount < self.configuration.maxSelectCount && selCount > 0) {
             if (self.configuration.mutuallyExclusiveSelectInMix) {
-                cell.maskView.backgroundColor = self.configuration.invalidMaskColor;
-                    cell.maskView.hidden = model.type != ZLAssetMediaTypeVideo;
+                cell.maskUIView.backgroundColor = self.configuration.invalidMaskColor;
+                    cell.maskUIView.hidden = model.type != ZLAssetMediaTypeVideo;
                     cell.enableSelect = model.type != ZLAssetMediaTypeVideo;
             }
         } else if (selCount >= self.configuration.maxSelectCount) {
-            cell.maskView.backgroundColor = self.configuration.invalidMaskColor;
-            cell.maskView.hidden = NO;
+            cell.maskUIView.backgroundColor = self.configuration.invalidMaskColor;
+            cell.maskUIView.hidden = NO;
             cell.enableSelect = NO;
         }
     }
